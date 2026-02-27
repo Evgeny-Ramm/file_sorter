@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Ветка для ревью кода
 import os
 import shutil
 import argparse
