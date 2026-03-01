@@ -1,0 +1,78 @@
+2026-03-01 16:41:19 - INFO - Найдено файлов: 0 в директории /home/ev/test_sort
+2026-03-01 16:43:01 - INFO - Найдено файлов: 0 в директории /home/ev/test_sort
+2026-03-01 18:46:57 - INFO - Найдено файлов: 2 в директории /home/ev/test_sort
+2026-03-01 18:46:57 - INFO - Перемещён: /home/ev/test_sort/file1.txt -> /home/ev/test_sort/Documents/file1.txt
+2026-03-01 18:46:57 - INFO - Перемещён: /home/ev/test_sort/file2.jpg -> /home/ev/test_sort/Images/file2.jpg
+2026-03-01 19:07:58 - INFO - Найдено файлов: 1 в директории /home/ev/test_sort
+2026-03-01 19:07:58 - INFO - Перемещён: /home/ev/test_sort/new_root_file.txt -> /home/ev/test_sort/Documents/new_root_file.txt
+2026-03-01 19:24:27 - INFO - Найдено файлов: 13 в директории /home/ev/test_sort
+2026-03-01 19:24:27 - INFO - Конфликт имён: cat.jpg уже существует, переименован в cat_2.jpg
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/Images/cat.jpg -> /home/ev/test_sort/Images/cat_2.jpg
+2026-03-01 19:24:27 - INFO - Конфликт имён: cat_1.jpg уже существует, переименован в cat_1_1.jpg
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/Images/cat_1.jpg -> /home/ev/test_sort/Images/cat_1_1.jpg
+2026-03-01 19:24:27 - INFO - Конфликт имён: file2.jpg уже существует, переименован в file2_1.jpg
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/Images/file2.jpg -> /home/ev/test_sort/Images/file2_1.jpg
+2026-03-01 19:24:27 - INFO - Конфликт имён: dog.png уже существует, переименован в dog_1.png
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/Images/dog.png -> /home/ev/test_sort/Images/dog_1.png
+2026-03-01 19:24:27 - INFO - Конфликт имён: script.js уже существует, переименован в script_1.js
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/Code/script.js -> /home/ev/test_sort/Code/script_1.js
+2026-03-01 19:24:27 - INFO - Конфликт имён: archive.zip уже существует, переименован в archive_1.zip
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/Archives/archive.zip -> /home/ev/test_sort/Archives/archive_1.zip
+2026-03-01 19:24:27 - INFO - Конфликт имён: music.mp3 уже существует, переименован в music_1.mp3
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/Audio/music.mp3 -> /home/ev/test_sort/Audio/music_1.mp3
+2026-03-01 19:24:27 - INFO - Конфликт имён: notes.txt уже существует, переименован в notes_1.txt
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/Documents/notes.txt -> /home/ev/test_sort/Documents/notes_1.txt
+2026-03-01 19:24:27 - INFO - Конфликт имён: file1.txt уже существует, переименован в file1_1.txt
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/Documents/file1.txt -> /home/ev/test_sort/Documents/file1_1.txt
+2026-03-01 19:24:27 - INFO - Конфликт имён: new_root_file.txt уже существует, переименован в new_root_file_1.txt
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/Documents/new_root_file.txt -> /home/ev/test_sort/Documents/new_root_file_1.txt
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/level1/file_in_level1.txt -> /home/ev/test_sort/Documents/file_in_level1.txt
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/level1/level2/file_in_level2.pdf -> /home/ev/test_sort/Documents/file_in_level2.pdf
+2026-03-01 19:24:27 - INFO - Перемещён: /home/ev/test_sort/level1/level2/file_in_level2.jpg -> /home/ev/test_sort/Images/file_in_level2.jpg
+2026-03-01 20:07:00 - INFO - Найдено файлов: 13 в директории /home/ev/test_sort
+2026-03-01 20:07:00 - INFO - Конфликт имён: cat_1_1.jpg уже существует, переименован в cat_1_1_1.jpg
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Images/cat_1_1.jpg -> /home/ev/test_sort/Images/cat_1_1_1.jpg
+2026-03-01 20:07:00 - INFO - Конфликт имён: dog_1.png уже существует, переименован в dog_1_1.png
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Images/dog_1.png -> /home/ev/test_sort/Images/dog_1_1.png
+2026-03-01 20:07:00 - INFO - Конфликт имён: cat_2.jpg уже существует, переименован в cat_2_1.jpg
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Images/cat_2.jpg -> /home/ev/test_sort/Images/cat_2_1.jpg
+2026-03-01 20:07:00 - INFO - Конфликт имён: file2_1.jpg уже существует, переименован в file2_1_1.jpg
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Images/file2_1.jpg -> /home/ev/test_sort/Images/file2_1_1.jpg
+2026-03-01 20:07:00 - INFO - Конфликт имён: file_in_level2.jpg уже существует, переименован в file_in_level2_1.jpg
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Images/file_in_level2.jpg -> /home/ev/test_sort/Images/file_in_level2_1.jpg
+2026-03-01 20:07:00 - INFO - Конфликт имён: script_1.js уже существует, переименован в script_1_1.js
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Code/script_1.js -> /home/ev/test_sort/Code/script_1_1.js
+2026-03-01 20:07:00 - INFO - Конфликт имён: archive_1.zip уже существует, переименован в archive_1_1.zip
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Archives/archive_1.zip -> /home/ev/test_sort/Archives/archive_1_1.zip
+2026-03-01 20:07:00 - INFO - Конфликт имён: music_1.mp3 уже существует, переименован в music_1_1.mp3
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Audio/music_1.mp3 -> /home/ev/test_sort/Audio/music_1_1.mp3
+2026-03-01 20:07:00 - INFO - Конфликт имён: new_root_file_1.txt уже существует, переименован в new_root_file_1_1.txt
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Documents/new_root_file_1.txt -> /home/ev/test_sort/Documents/new_root_file_1_1.txt
+2026-03-01 20:07:00 - INFO - Конфликт имён: file_in_level1.txt уже существует, переименован в file_in_level1_1.txt
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Documents/file_in_level1.txt -> /home/ev/test_sort/Documents/file_in_level1_1.txt
+2026-03-01 20:07:00 - INFO - Конфликт имён: file1_1.txt уже существует, переименован в file1_1_1.txt
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Documents/file1_1.txt -> /home/ev/test_sort/Documents/file1_1_1.txt
+2026-03-01 20:07:00 - INFO - Конфликт имён: file_in_level2.pdf уже существует, переименован в file_in_level2_1.pdf
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Documents/file_in_level2.pdf -> /home/ev/test_sort/Documents/file_in_level2_1.pdf
+2026-03-01 20:07:00 - INFO - Конфликт имён: notes_1.txt уже существует, переименован в notes_1_1.txt
+2026-03-01 20:07:00 - INFO - Перемещён: /home/ev/test_sort/Documents/notes_1.txt -> /home/ev/test_sort/Documents/notes_1_1.txt
+2026-03-01 20:20:02 - INFO - Найдено файлов: 0 в директории /home/ev/test_sort
+2026-03-01 20:21:27 - INFO - Найдено файлов: 1 в директории /home/ev/Загрузки
+2026-03-01 20:21:27 - INFO - [DRY RUN] /home/ev/Загрузки/v.mp4 -> /home/ev/Загрузки/Video/v.mp4
+2026-03-01 20:25:09 - INFO - Найдено файлов: 1 в директории /home/ev/Загрузки
+2026-03-01 20:25:09 - INFO - [DRY RUN] /home/ev/Загрузки/v.mp4 -> /home/ev/Загрузки/Video/v.mp4
+2026-03-01 20:32:13 - INFO - Найдено файлов: 4 в директории /home/ev/Загрузки
+2026-03-01 20:32:13 - INFO - [DRY RUN] /home/ev/Загрузки/music.mp3 -> /home/ev/Загрузки/Audio/music.mp3
+2026-03-01 20:32:13 - INFO - [DRY RUN] /home/ev/Загрузки/v.mp4 -> /home/ev/Загрузки/Video/v.mp4
+2026-03-01 20:32:13 - INFO - [DRY RUN] /home/ev/Загрузки/test1.jpg -> /home/ev/Загрузки/Images/test1.jpg
+2026-03-01 20:32:13 - INFO - [DRY RUN] /home/ev/Загрузки/test2.txt -> /home/ev/Загрузки/Documents/test2.txt
+2026-03-01 20:42:03 - INFO - Найдено файлов: 4 в директории /home/ev/Загрузки
+2026-03-01 20:42:03 - INFO - [DRY RUN] /home/ev/Загрузки/music.mp3 -> /home/ev/Загрузки/Audio/music.mp3
+2026-03-01 20:42:03 - INFO - [DRY RUN] /home/ev/Загрузки/v.mp4 -> /home/ev/Загрузки/Video/v.mp4
+2026-03-01 20:42:03 - INFO - [DRY RUN] /home/ev/Загрузки/test1.jpg -> /home/ev/Загрузки/Images/test1.jpg
+2026-03-01 20:42:03 - INFO - [DRY RUN] /home/ev/Загрузки/test2.txt -> /home/ev/Загрузки/Documents/test2.txt
+2026-03-01 20:43:57 - INFO - Найдено файлов: 4 в директории /home/ev/Загрузки
+2026-03-01 20:43:57 - INFO - Перемещён: /home/ev/Загрузки/music.mp3 -> /home/ev/Загрузки/Audio/music.mp3
+2026-03-01 20:43:57 - INFO - Перемещён: /home/ev/Загрузки/v.mp4 -> /home/ev/Загрузки/Video/v.mp4
+2026-03-01 20:43:57 - INFO - Перемещён: /home/ev/Загрузки/test1.jpg -> /home/ev/Загрузки/Images/test1.jpg
+2026-03-01 20:43:57 - INFO - Перемещён: /home/ev/Загрузки/test2.txt -> /home/ev/Загрузки/Documents/test2.txt
