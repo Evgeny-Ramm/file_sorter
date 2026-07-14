@@ -1,132 +1,91 @@
 #!/usr/bin/env python3
-# Ветка для ревью кода
-import json
+# -*- coding: utf-8 -*-
+
+# file_sorter.py
+# Сортировка файлов по расширениям с цветным выводом и рекурсией.
+
 import os
 import shutil
 import argparse
-import sys
-import logging
+from colorama import init, Fore, Style
 
-def load_config(config_file='config.json'):
-    """Загружает конфигурацию из JSON-файла. Если файл не найден, возвращает словарь по умолчанию."""
-    default_config = {
-        'Images': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg'],
-        'Documents': ['.pdf', '.docx', '.doc', '.txt', '.odt', '.xlsx', '.pptx'],
-        'Archives': ['.zip', '.tar', '.gz', '.7z', '.rar'],
-        'Audio': ['.mp3', '.wav', '.flac', '.aac'],
-        'Video': ['.mp4', '.mkv', '.avi', '.mov'],
-        'Code': ['.py', '.js', '.html', '.css', '.cpp', '.c', '.h', '.sh'],
-        'Others': []
-    }
-    try:
-        with open(config_file, 'r', encoding='utf-8') as f:
-            config = json.load(f)
-        # Проверим, что загруженный конфиг — это словарь (можно добавить больше проверок)
-        if isinstance(config, dict):
-            return config
-        else:
-            print(f"Ошибка: файл {config_file} должен содержать словарь. Используется конфигурация по умолчанию.")
-            return default_config
-    except FileNotFoundError:
-        # Если файла нет, создадим его с конфигом по умолчанию (опционально)
-        with open(config_file, 'w', encoding='utf-8') as f:
-            json.dump(default_config, f, indent=4, ensure_ascii=False)
-        print(f"Создан файл конфигурации {config_file} с настройками по умолчанию.")
-        return default_config
-    except json.JSONDecodeError:
-        print(f"Ошибка: файл {config_file} повреждён (некорректный JSON). Используется конфигурация по умолчанию.")
-        return default_config
+init(autoreset=True)
 
+EXTENSION_MAP = {
+    'Images': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg'],
+    'Documents': ['.pdf', '.docx', '.doc', '.txt', '.odt', '.xlsx', '.pptx'],
+    'Archives': ['.zip', '.tar', '.gz', '.7z', '.rar'],
+    'Audio': ['.mp3', '.wav', '.flac', '.aac'],
+    'Video': ['.mp4', '.mkv', '.avi', '.mov'],
+    'Code': ['.py', '.js', '.html', '.css', '.cpp', '.c', '.h', '.sh'],
+}
 
-def get_files(directory, recursive=False):
-    """Возвращает список полных путей всех файлов в директории.
-    Если recursive=True, обходит подпапки рекурсивно."""
-    files = []
-    if recursive:
-        # os.walk рекурсивно обходит все подпапки
-        for root, dirs, filenames in os.walk(directory):
-            for filename in filenames:
-                full_path = os.path.join(root, filename)
-                files.append(full_path)
-    else:
-        # старый вариант: только текущая папка
-        for entry in os.listdir(directory):
-            full_path = os.path.join(directory, entry)
-            if os.path.isfile(full_path):
-                files.append(full_path)
-    return files
-
-
-def get_category(file_path, config, default='Others'):
+def get_category(file_path):
     _, ext = os.path.splitext(file_path)
     ext = ext.lower()
-    for category, extensions in config.items():
+    for category, extensions in EXTENSION_MAP.items():
         if ext in extensions:
             return category
-    return default
-
-def ensure_dir(directory):
-    """Создаёт директорию, если она не существует."""
-    os.makedirs(directory, exist_ok=True)
+    return 'Others'
 
 def move_file(file_path, dest_dir, dry_run=False):
-    """Перемещает файл в целевую папку, обрабатывая конфликты имён."""
     filename = os.path.basename(file_path)
     dest_path = os.path.join(dest_dir, filename)
 
     if dry_run:
-        logging.info(f"[DRY RUN] {file_path} -> {dest_path}")
+        print(f"{Fore.YELLOW}[DRY RUN] {file_path} -> {dest_path}{Style.RESET_ALL}")
         return
 
-    # Создаём папку назначения
-    ensure_dir(dest_dir)
+    os.makedirs(dest_dir, exist_ok=True)
 
-    # Если файл уже существует, генерируем уникальное имя
     if os.path.exists(dest_path):
         base, ext = os.path.splitext(filename)
         counter = 1
         while True:
-            new_filename = f"{base}_{counter}{ext}"
-            new_dest_path = os.path.join(dest_dir, new_filename)
-            if not os.path.exists(new_dest_path):
-                logging.info(f"Конфликт имён: {filename} уже существует, переименован в {new_filename}")
-                dest_path = new_dest_path
+            new_name = f"{base}_{counter}{ext}"
+            new_path = os.path.join(dest_dir, new_name)
+            if not os.path.exists(new_path):
+                dest_path = new_path
                 break
             counter += 1
 
-    # Перемещаем файл
     shutil.move(file_path, dest_path)
-    logging.info(f"Перемещён: {file_path} -> {dest_path}")
+    print(f"{Fore.GREEN}Перемещён: {file_path} -> {dest_path}{Style.RESET_ALL}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Сортировщик файлов по расширениям.")
-    parser.add_argument("directory", help="Путь к директории для сортировки")
-    parser.add_argument("--dry-run", action="store_true", help="Показать, что будет сделано, без реального перемещения")
-    parser.add_argument("-r", "--recursive", action="store_true",
-                        help="Обрабатывать файлы рекурсивно (включая подпапки)")
+    parser = argparse.ArgumentParser(description="сортировка файлов")
+    parser.add_argument("directory", help="папка для сортировки")
+    parser.add_argument("-r", "--recursive", action="store_true", help="обход подпапок")
+    parser.add_argument("--dry-run", action="store_true", help="сухой прогон")
     args = parser.parse_args()
-    
-     # Настройка логирования
-    logging.basicConfig(
-        filename='file_sorter.log',
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S'
-     )
-
-    config = load_config()
 
     if not os.path.isdir(args.directory):
-        logging.error(f"Директория {args.directory} не существует.")
-        sys.exit(1)
+        print("Ошибка: папка не существует")
+        return
 
-    files = get_files(args.directory, recursive=args.recursive)
-    logging.info(f"Найдено файлов: {len(files)} в директории {args.directory}")
+    files = []
+    if args.recursive:
+        for root, _, filenames in os.walk(args.directory):
+            for f in filenames:
+                files.append(os.path.join(root, f))
+    else:
+        for entry in os.listdir(args.directory):
+            full_path = os.path.join(args.directory, entry)
+            if os.path.isfile(full_path):
+                files.append(full_path)
 
+    print(f"{Fore.CYAN}Найдено файлов: {len(files)}{Style.RESET_ALL}")
+
+    stats = {}
     for f in files:
-        cat = get_category(f, config, default='Others')
+        cat = get_category(f)
         dest_dir = os.path.join(args.directory, cat)
-        move_file(f, dest_dir, dry_run=args.dry_run)
+        move_file(f, dest_dir, args.dry_run)
+        stats[cat] = stats.get(cat, 0) + 1
+
+    print(f"\n{Fore.CYAN}Статистика:{Style.RESET_ALL}")
+    for cat, count in stats.items():
+        print(f"  {cat}: {count}")
 
 if __name__ == "__main__":
     main()
